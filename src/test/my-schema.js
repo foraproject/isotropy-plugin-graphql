@@ -2,20 +2,21 @@ import {
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLNonNull,
-  GraphQLString
+  GraphQLString,
+  GraphQLInt
 } from 'graphql';
 
-var QueryRootType = new GraphQLObjectType({
+const QueryRootType = new GraphQLObjectType({
   name: 'QueryRoot',
   fields: {
-    test: {
+    greeting: {
       type: GraphQLString,
       args: {
-        who: {
-          type: GraphQLString
+        id: {
+          type: GraphQLInt
         }
       },
-      resolve: (root, { who }) => 'Hello ' + (who || 'World')
+      resolve: (root, { id }) => `Hello user ${id}`
     },
     thrower: {
       type: new GraphQLNonNull(GraphQLString),
@@ -24,17 +25,22 @@ var QueryRootType = new GraphQLObjectType({
   }
 });
 
+
+const MutationRootType = new GraphQLObjectType({
+  name: 'MutationRoot',
+  fields: {
+    writeTest: {
+      type: QueryRootType,
+      resolve: () => ({})
+    }
+  }
+});
+
+
 var TestSchema = new GraphQLSchema({
   query: QueryRootType,
-  mutation: new GraphQLObjectType({
-    name: 'MutationRoot',
-    fields: {
-      writeTest: {
-        type: QueryRootType,
-        resolve: () => ({})
-      }
-    }
-  })
+  mutation: MutationRootType
 });
+
 
 export default TestSchema;

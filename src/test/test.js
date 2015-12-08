@@ -40,7 +40,7 @@ describe("Isotropy React Plugin", () => {
     });
 
 
-    it(`Should serve a react app`, () => {
+    it(`Should respond to a GraphQL Query`, () => {
         const appConfig = { schema: MySchema };
 
         const options = {
@@ -49,12 +49,22 @@ describe("Isotropy React Plugin", () => {
 
         const promise = new Promise((resolve, reject) => {
             graphqlPlugin.setup(appConfig, defaultInstance, options).then(() => {
-                makeRequest("localhost", 8080, "/graphql", "POST", { 'Content-Type': 'application/json' }, '{ "query": "query QueryRoot { test }" }', resolve, reject);
+                const query = "query QueryRoot { greeting }";
+                makeRequest(
+                    "localhost",
+                    8080,
+                    "/graphql",
+                    "POST",
+                    { 'Content-Type': 'application/json' },
+                    `{ "query": "query QueryRoot { greeting(id: 200)}" }`,
+                    resolve,
+                    reject
+                );
             }, reject);
         });
 
         return promise.then((data) => {
-            data.should.startWith(`{"data":{"test":"Hello World"}}`);
+            data.should.equal(`{"data":{"greeting":"Hello user 200"}}`);
         });
     });
 });
