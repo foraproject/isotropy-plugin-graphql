@@ -10,7 +10,6 @@
     "main": "dist/isotropy-plugin-graphql",
     "license": "MIT",
     "dependencies": {
-        "isotropy-router": "*",
         "graphql": "*",
         "koa-convert": "*",
         "koa-graphql": "*"
