@@ -1,6 +1,5 @@
 /* @flow */
-import { KoaContextType, KoaHandlerType } from "koa";
-import type KoaAppType from "koa";
+import type { KoaType, KoaContextType, KoaHandlerType } from "./flow/koa-types";
 import graphqlHTTP from 'koa-graphql';
 import convert from "koa-convert";
 
@@ -23,7 +22,7 @@ const getDefaultValues = function(val: Object = {}) : GraphqlAppType {
 };
 
 
-const setup = async function(app: GraphqlAppType, server: KoaAppType, config: GraphqlConfigType) : Promise {
+const setup = async function(app: GraphqlAppType, server: KoaType, config: GraphqlConfigType) : Promise {
     const graphiql = config.graphiql;
     server.use(
         convert(graphqlHTTP({

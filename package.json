@@ -3,6 +3,9 @@
     "name": "isotropy-plugin-graphql",
     "version": "0.1.2",
     "description": "Graphql plugin for Isotropy.",
+    "scripts": {
+        "test": "mocha dist/test/test.js"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/jeswin/isotropy-plugin-graphql.git"

@@ -1,8 +1,7 @@
-type ArgumentType = {
-    schema: Object,
-    graphiql: boolean
-}
-
 declare module "koa-graphql" {
-    declare function exports (arg: ArgumentType) : Function
+    declare type KoaGraphqlArgumentType = {
+        schema: Object,
+        graphiql: boolean
+    }
+    declare function exports (arg: KoaGraphqlArgumentType) : Function
 }
