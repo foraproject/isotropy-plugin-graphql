@@ -10,7 +10,7 @@ export type GraphqlAppType = {
 }
 
 export type GraphqlConfigType = {
-    graphiql: boolean
+    graphiql?: boolean
 }
 
 const getDefaultValues = function(val: Object = {}) : GraphqlAppType {
@@ -23,7 +23,7 @@ const getDefaultValues = function(val: Object = {}) : GraphqlAppType {
 
 
 const setup = async function(app: GraphqlAppType, server: KoaType, config: GraphqlConfigType) : Promise {
-    const graphiql = config.graphiql;
+    const graphiql = (typeof config.graphiql !== "undefined" && config.graphiql !== null) ? config.graphiql : false;
     server.use(
         convert(graphqlHTTP({
             schema: app.schema,

@@ -1,7 +1,7 @@
 {
     "author": "Jeswin Kumar <jeswinpk@agilehead.com>",
     "name": "isotropy-plugin-graphql",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Graphql plugin for Isotropy.",
     "scripts": {
         "test": "mocha dist/test/test.js"
@@ -28,6 +28,6 @@
         "mocha": "*",
         "should": "*"
     },
-    "keywords": ["koa", "graphql"],
+    "keywords": ["koa", "graphql", "isotropy", "isomorphic"],
     "license" : "MIT"
 }
