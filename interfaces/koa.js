@@ -7,6 +7,7 @@ declare module "koa" {
         method: string;
         path: string;
         status: number;
+        body: string;
     }
 
     declare function KoaMiddlewareType(context: KoaContextType, next: KoaNextType) : Promise;
