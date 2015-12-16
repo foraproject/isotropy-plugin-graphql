@@ -13,7 +13,7 @@ export type GraphqlConfigType = {
     graphiql?: boolean
 }
 
-const getDefaultValues = function(val: Object = {}) : GraphqlAppType {
+const getDefaults = function(val: Object = {}) : GraphqlAppType {
     return {
         type: val.type || "graphql",
         schema: val.schema,
@@ -34,6 +34,6 @@ const setup = async function(app: GraphqlAppType, server: KoaType, config: Graph
 
 
 export default {
-    getDefaultValues,
+    getDefaults,
     setup
 };

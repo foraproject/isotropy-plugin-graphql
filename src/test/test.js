@@ -34,7 +34,7 @@ describe("Isotropy React Plugin", () => {
 
     it(`Should get default configuration values`, () => {
         const config = {};
-        const completedConfig = graphqlPlugin.getDefaultValues(config);
+        const completedConfig = graphqlPlugin.getDefaults(config);
         completedConfig.type.should.equal("graphql");
         completedConfig.path.should.equal("/graphql");
     });
