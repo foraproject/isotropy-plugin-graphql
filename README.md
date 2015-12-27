@@ -1,3 +1,3 @@
 Isotropy Plugin React
 =====================
-React plugin for Isotropy
+GraphQL plugin for Isotropy
