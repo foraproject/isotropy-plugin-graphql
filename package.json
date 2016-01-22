@@ -1,33 +1,33 @@
 {
-    "author": "Jeswin Kumar <jeswinpk@agilehead.com>",
-    "name": "isotropy-plugin-graphql",
-    "version": "1.0.1",
-    "description": "Graphql plugin for Isotropy.",
-    "scripts": {
-        "test": "mocha dist/test/test.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jeswin/isotropy-plugin-graphql.git"
-    },
-    "main": "dist/isotropy-plugin-graphql",
-    "license": "MIT",
-    "dependencies": {
-        "graphql": "*",
-        "koa-convert": "*",
-        "koa-graphql": "*"
-    },
-    "devDependencies": {
-        "koa": "2.0.0-alpha.3",
-        "nodefunc-promisify": "*",
-        "babel-polyfill": "*",
-        "babel-preset-es2015": "*",
-        "babel-preset-react": "*",
-        "babel-preset-stage-2": "*",
-        "babel-plugin-transform-class-properties": "*",
-        "mocha": "*",
-        "should": "*"
-    },
-    "keywords": ["koa", "graphql", "isotropy", "isomorphic"],
-    "license" : "MIT"
+  "author": "Jeswin Kumar <jeswinpk@agilehead.com>",
+  "name": "isotropy-plugin-graphql",
+  "version": "1.0.2",
+  "description": "Graphql plugin for Isotropy.",
+  "scripts": {
+    "test": "mocha dist/test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeswin/isotropy-plugin-graphql.git"
+  },
+  "main": "dist/isotropy-plugin-graphql",
+  "license": "MIT",
+  "dependencies": {
+    "graphql": "*",
+    "koa-convert": "*",
+    "koa-graphql": "*"
+  },
+  "devDependencies": {
+    "koa": "2.0.0-alpha.3",
+    "nodefunc-promisify": "*",
+    "babel-polyfill": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-2": "*",
+    "babel-plugin-transform-class-properties": "*",
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": ["koa", "graphql", "isotropy", "isomorphic"],
+  "license" : "MIT"
 }
