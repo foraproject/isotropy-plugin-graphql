@@ -1,7 +1,8 @@
 /* @flow */
-import type { KoaType, KoaContextType, KoaHandlerType } from "./flow/koa-types";
-import graphqlHTTP from 'koa-graphql';
-import convert from "koa-convert";
+import Router from "isotropy-router";
+import graphqlHTTP from 'isotropy-graphql';
+
+import type { HttpMethodRouteOptionsType, HttpMethodRouteArgsType } from "isotropy-router";
 
 export type GraphqlAppType = {
   schema: Object,
@@ -22,14 +23,15 @@ const getDefaults = function(val: Object = {}) : GraphqlAppType {
 };
 
 
-const setup = async function(app: GraphqlAppType, server: KoaType, config: GraphqlConfigType) : Promise {
-  const graphiql = (typeof config.graphiql !== "undefined" && config.graphiql !== null) ? config.graphiql : false;
-  server.use(
-    convert(graphqlHTTP({
-      schema: app.schema,
-      graphiql
-    }))
-  );
+const setup = async function(appConfig: GraphqlAppType, router: Router, config: GraphqlConfigType) : Promise {
+    const graphqlFn = graphqlHTTP({
+      schema: appConfig.schema,
+      graphiql: config.graphiql
+    });
+
+  router.when(() => true, async (req, res) => {
+    await graphqlFn(req, res);
+  });
 };
 
 
