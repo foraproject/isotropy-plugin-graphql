@@ -7,11 +7,11 @@ import type { HttpMethodRouteOptionsType, HttpMethodRouteArgsType } from "isotro
 export type GraphqlAppType = {
   schema: Object,
   type: string,
-  path: string
+  path: string,
+  graphiql?: boolean
 }
 
 export type GraphqlConfigType = {
-  graphiql?: boolean
 }
 
 const getDefaults = function(val: Object = {}) : GraphqlAppType {
@@ -23,10 +23,10 @@ const getDefaults = function(val: Object = {}) : GraphqlAppType {
 };
 
 
-const setup = async function(appConfig: GraphqlAppType, router: Router, config: GraphqlConfigType) : Promise {
+const setup = async function(appConfig: GraphqlAppType, router: Router, config: Object) : Promise {
     const graphqlFn = graphqlHTTP({
       schema: appConfig.schema,
-      graphiql: config.graphiql
+      graphiql: appConfig.graphiql
     });
 
   router.when(() => true, async (req, res) => {

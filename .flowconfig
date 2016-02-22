@@ -15,3 +15,5 @@
 .*/node_modules/babel-template/.*
 .*/node_modules/babel-traverse/.*
 .*/node_modules/babel-helper-regex/.*
+.*/node_modules/babel-core/.*
+.*/node_modules/babel-register/.*
