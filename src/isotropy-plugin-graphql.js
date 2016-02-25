@@ -14,9 +14,15 @@ export type GraphqlAppType = {
 export type GraphqlConfigType = {
 }
 
-const getDefaults = function(val: Object = {}) : GraphqlAppType {
+export type getDefaultsParamsType = {
+  type: string,
+  schema: Object,
+  path?: string
+}
+
+const getDefaults = function(val: getDefaultsParamsType) : GraphqlAppType {
   return {
-    type: val.type || "graphql",
+    type: val.type,
     schema: val.schema,
     path: val.path || "/graphql"
   };
