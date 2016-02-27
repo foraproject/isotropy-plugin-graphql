@@ -42,6 +42,7 @@ const setup = async function(appConfig: GraphqlAppType, router: Router, config: 
 
 
 export default {
+  name: "graphql",
   getDefaults,
   setup
 };
