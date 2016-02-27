@@ -1,30 +1,34 @@
 /* @flow */
 import Router from "isotropy-router";
 import graphqlHTTP from 'isotropy-graphql';
-
+import type { IncomingMessage, ServerResponse } from "./flow/http"
 import type { HttpMethodRouteOptionsType, HttpMethodRouteArgsType } from "isotropy-router";
 
 export type GraphqlAppType = {
-  schema: Object,
   type: string,
+  schema: Object,
   path: string,
+  onError?: (req: IncomingMessage, res: ServerResponse, e: any) => void,
   graphiql?: boolean
 }
 
-export type GraphqlConfigType = {
-}
+export type GraphqlConfigType = {}
 
 export type getDefaultsParamsType = {
   type: string,
   schema: Object,
-  path?: string
+  path?: string,
+  onError?: (req: IncomingMessage, res: ServerResponse, e: any) => void,
+  graphiql?: boolean
 }
 
 const getDefaults = function(val: getDefaultsParamsType) : GraphqlAppType {
   return {
     type: val.type,
     schema: val.schema,
-    path: val.path || "/graphql"
+    path: val.path || "/graphql",
+    onError: val.onError,
+    graphiql: val.graphiql
   };
 };
 
