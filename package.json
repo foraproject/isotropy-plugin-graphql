@@ -1,14 +1,14 @@
 {
   "author": "Jeswin Kumar <jeswinpk@agilehead.com>",
   "name": "isotropy-plugin-graphql",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Graphql plugin for Isotropy.",
   "scripts": {
     "test": "mocha dist/test/test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nodejam/isotropy-plugin-graphql.git"
+    "url": "https://github.com/jeswin/isotropy-plugin-graphql.git"
   },
   "main": "dist/isotropy-plugin-graphql",
   "license": "MIT",
